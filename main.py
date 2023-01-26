@@ -25,7 +25,7 @@ def main():
 
     print("Success.")
 
-    test_dataset.get(0)
+    print(test_dataset.get(0))
 
 if __name__ == "__main__":
     main()
