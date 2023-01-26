@@ -11,7 +11,7 @@ def main():
     # obter os nomes dos arquivos de configuracao e de saida da linha de comando
     # args = parse_args()
     # le o arquivo json e retorna como um dicionario
-    config = load_config("data/configs/config.json")
+    config = load_config("data/configs/knn_image_config.json")
 
     train_dataset = create_dataset(config["train_path"], config["type"])
     test_dataset = create_dataset(config["test_path"], config["type"])
@@ -25,6 +25,7 @@ def main():
 
     print("Success.")
 
+    test_dataset.get(0)
 
 if __name__ == "__main__":
     main()

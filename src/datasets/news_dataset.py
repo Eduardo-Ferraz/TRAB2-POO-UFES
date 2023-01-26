@@ -15,4 +15,8 @@ class NewsDataset(DatasetInterface):
     def get(self, idx: int) -> Tuple[Any, str]:
         # ler a i-esima noticia do disco e retornar o texto como uma string e
         # a classe
+
+        # with open(self.path) as f:
+        #     [print(line) for line in f.readlines()]
+
         return 0, ""

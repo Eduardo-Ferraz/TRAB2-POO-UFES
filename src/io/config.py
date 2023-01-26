@@ -3,26 +3,7 @@
 from typing import Dict
 import json
 
+""" le o arquivo json e retorna como um dicionario """
 def load_config(path: str) -> Dict:
-    """ le o arquivo json e retorna como um dicionario """
-    dummy_JSON_string = """
-    {
-        "type": "image",
-        "train_path": "data/datasets/img_small/train.txt",
-        "test_path": "data/datasets/img_small/test.txt",
-        "classifier": "knn"
-    }
-    """
-
-    dummy_dict = json.loads(dummy_JSON_string)
-    
-    # we're returning dummy values just to make the main program runnable
-    # dummy_dict = {
-    #     "type": "image",
-    #     "train_path": "data/datasets/img_small/train.txt",
-    #     "test_path": "data/datasets/img_small/test.txt",
-    #     "classifier": "knn"
-    # } 
-
-
-    return dummy_dict
+    with open(path) as jsonFile:
+        return json.load(jsonFile)
