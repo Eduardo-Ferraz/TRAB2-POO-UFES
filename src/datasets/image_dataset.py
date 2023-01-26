@@ -4,7 +4,6 @@ from .dataset_interface import DatasetInterface
 
 import cv2
 
-
 class ImageDataset(DatasetInterface):
     # ler arquivo contendo os nomes das imagens e as classes e armazenar
     # em uma lista
@@ -25,7 +24,8 @@ class ImageDataset(DatasetInterface):
 
     # retornar tamanho do dataset (numero de linhas do arquivo)
     def size(self) -> int:
-        return 0
+        size = sum(1 for _ in self.images)
+        return size
 
     # ler a i-esima imagem do disco usando a biblioteca cv2 e retornar
     # a imagem e a respectiva classe

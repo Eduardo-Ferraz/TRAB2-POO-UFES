@@ -26,6 +26,7 @@ def main():
     print("Success.")
 
     print(test_dataset.get(0))
+    print(test_dataset.size())
 
 if __name__ == "__main__":
     main()
