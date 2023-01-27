@@ -10,7 +10,12 @@ class KnnClassifier(ClassifierInterface):
 
     def train(self, train_dataset: DatasetInterface) -> None:
         # salvar as amostras do dataset
-        pass
+        # Cada imagem é um vetor de 28 vezes 28 coordenadas
+        vetores = []
+        [vetores.append([train_dataset.get(i)]) for i in range(train_dataset.size())]
+        
+        for i in range(len(vetores)): print(vetores[i]) 
+        
 
     def predict(self, test_dataset: DatasetInterface) -> List[str]:
         """ para cada amostra no dataset, buscar os k vizinhos mais proximos e 

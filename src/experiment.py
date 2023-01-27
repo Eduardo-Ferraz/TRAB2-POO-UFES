@@ -28,6 +28,6 @@ class Experiment:
     def _get_true_classes_from_dataset(self, dataset: DatasetInterface) -> List[str]:
         true_classes = []
         for idx in range(dataset.size()):
-            _, sample_class = dataset.get(idx)
+            _, sample_class = dataset.get(idx) # _, descarta o primeiro valor e salva só a classe
             true_classes.append(sample_class)
         return true_classes

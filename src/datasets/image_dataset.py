@@ -34,9 +34,10 @@ class ImageDataset(DatasetInterface):
         # Using cv2.imread() method
         # Using 0 to read image in grayscale mode
         img = cv2.imread(imgPath, 0)
+        flatImage = [pixel for line in img for pixel in line]
 
         # Displaying the image
-        cv2.imshow('image', img)
-        cv2.waitKey()
+        # cv2.imshow('image', img)
+        # cv2.waitKey()
 
-        return img, imgClass
+        return flatImage, imgClass
