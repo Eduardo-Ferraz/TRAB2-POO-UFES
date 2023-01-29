@@ -1,22 +1,59 @@
 
+from math import sqrt
 from typing import Dict, List
 from .classifier_interface import ClassifierInterface
 from src.datasets.dataset_interface import DatasetInterface
 
 
+def get_distancia_euclidiana(vetor1, vetor2):
+    qtd_coordenadas = len(vetor2)
+
+    soma = 0
+
+    for idx_coordenada in range(qtd_coordenadas):
+        soma += (vetor1[idx_coordenada] - vetor2[idx_coordenada]) ** 2
+
+    distancia = sqrt(soma)
+    return distancia
+
+
 class KnnClassifier(ClassifierInterface):
     def __init__(self) -> None:
         super().__init__()
+        self.K = 5
 
     def train(self, train_dataset: DatasetInterface) -> None:
         # salvar as amostras do dataset
         # Cada imagem é um vetor de 28 vezes 28 coordenadas
-        self.vetores = []
-        for i in range(train_dataset.size()): 
-            self.vetores.append(train_dataset.get(i))
-
+        self.vetores_de_base = []
+        for i in range(train_dataset.size()):
+            self.vetores_de_base.append(train_dataset.get(i))
 
     def predict(self, test_dataset: DatasetInterface) -> List[str]:
         """ para cada amostra no dataset, buscar os k vizinhos mais proximos e 
         retornar a classe mais frequente entre eles """
-        return []
+        classes_preditas = [self._predict_amostra(
+            test_dataset, idx_vetor) for idx_vetor in range(test_dataset.size())]
+
+        return classes_preditas
+
+    def _predict_amostra(self, test_dataset, idx_vetor):
+        vetor_de_teste, _ = test_dataset.get(
+            idx_vetor)  # vetor p/ calcular distancia
+
+        distancias = []
+
+        # Calcula a distancia do vetor de teste para os vetores de base
+        for vetor_de_base, result in self.vetores_de_base:
+            distancia = (get_distancia_euclidiana(
+                vetor_de_base, vetor_de_teste), result)
+            distancias.append(distancia)
+
+        distancias.sort(key=lambda dist: dist[0])
+
+        classes_vetores_proximos = [dist[1] for dist in distancias[:self.K]]
+
+        classe_vetor_de_teste = max(
+            set(classes_vetores_proximos), key=classes_vetores_proximos.count)
+
+        return classe_vetor_de_teste

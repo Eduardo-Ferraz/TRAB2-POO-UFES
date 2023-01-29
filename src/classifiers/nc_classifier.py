@@ -35,19 +35,6 @@ class NearestCentroidClassifier(ClassifierInterface):
                     vetoresAPCO[j].append(vetor)
                     break
 
-        # for m in range((len(classes))):
-        #     for k in range(len(vetoresAPCO[0])):
-        #         for p in range(len(vetoresAPCO[0][0])):
-        #             somaPnesimaCoord += vetoresAPCO[m][k][p]
-        #         mediaPnesimaCoord = somaPnesimaCoord / len(vetoresAPCO[0][0])
-        #         somaPnesimaCoord = 0
-        #         self.centroides[m].append([])
-        #         self.centroides[m][k].append(mediaPnesimaCoord)
-
-        # for m in range((len(classes))):
-        #     for p in range(len(vetoresAPCO[0][0])):
-        #         self.centroides[m].append([])
-
         """Para cada Classe c, para cada Coordenada x, para cada vetor v...."""
         for c in range((len(classes))):
             self.centroides.append(([], classes[c]))
