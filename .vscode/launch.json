@@ -5,10 +5,20 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Python: main.py (Integrated Terminal)",
+            "name": "knn img_small",
             "type": "python",
             "request": "launch",
             "program": "${workspaceFolder}/main.py",
+            "args": ["${workspaceFolder}\\data\\config\\knn_image_config", "${workspaceFolder}\\data\\report.txt"],
+            "console": "integratedTerminal",
+            "justMyCode": true,
+        },
+        {
+            "name": "nc img_small",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "args": ["${workspaceFolder}/data/configs/nc_image_config", "${workspaceFolder}/data/report.txt"],
             "console": "integratedTerminal",
             "justMyCode": true,
         }

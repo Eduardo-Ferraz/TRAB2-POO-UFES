@@ -6,12 +6,15 @@ from src.io.args import parse_args
 from src.io.config import load_config
 from src.io.report import write_report
 
+from sys import argv
+
 
 def main():
     # obter os nomes dos arquivos de configuracao e de saida da linha de comando
     # args = parse_args()
     # le o arquivo json e retorna como um dicionario
-    config = load_config("data/configs/nc_image_config.json")
+
+    config = load_config(argv[1])
 
     train_dataset = create_dataset(config["train_path"], config["type"])
     test_dataset = create_dataset(config["test_path"], config["type"])
