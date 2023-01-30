@@ -5,20 +5,50 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "knn img_small",
+            "name": "KNN - Small",
             "type": "python",
             "request": "launch",
             "program": "${workspaceFolder}/main.py",
-            "args": ["${workspaceFolder}\\data\\config\\knn_image_config", "${workspaceFolder}\\data\\report.txt"],
+            "args": [
+                "knn_img_small_config.json",
+                "report.txt"
+            ],
             "console": "integratedTerminal",
             "justMyCode": true,
         },
         {
-            "name": "nc img_small",
+            "name": "KNN - Medium",
             "type": "python",
             "request": "launch",
             "program": "${workspaceFolder}/main.py",
-            "args": ["${workspaceFolder}/data/configs/nc_image_config", "${workspaceFolder}/data/report.txt"],
+            "args": [
+                "knn_img_medium_config.json",
+                "report.txt"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": true,
+        },
+        {
+            "name": "NC - Fast",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "args": [
+                "nc_img_small_config.json",
+                "report.txt"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": true,
+        },
+        {
+            "name": "NC - Medium",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "args": [
+                "nc_img_medium_config.json",
+                "report.txt"
+            ],
             "console": "integratedTerminal",
             "justMyCode": true,
         }
