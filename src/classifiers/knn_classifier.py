@@ -1,20 +1,10 @@
 
 from math import sqrt
 from typing import Dict, List
+
+from src.classifiers.distance_calculator import get_distancia_euclidiana
 from .classifier_interface import ClassifierInterface
 from src.datasets.dataset_interface import DatasetInterface
-
-
-def get_distancia_euclidiana(vetor1, vetor2):
-    qtd_coordenadas = len(vetor2)
-
-    soma = 0
-
-    for idx_coordenada in range(qtd_coordenadas):
-        soma += (vetor1[idx_coordenada] - vetor2[idx_coordenada]) ** 2
-
-    distancia = sqrt(soma)
-    return distancia
 
 
 class KnnClassifier(ClassifierInterface):
@@ -54,6 +44,8 @@ class KnnClassifier(ClassifierInterface):
         classes_vetores_proximos = [dist[1] for dist in distancias[:self.K]]
 
         classe_vetor_de_teste = max(
-            set(classes_vetores_proximos), key=classes_vetores_proximos.count)
+            set(classes_vetores_proximos),
+            key=classes_vetores_proximos.count
+        )
 
         return classe_vetor_de_teste
