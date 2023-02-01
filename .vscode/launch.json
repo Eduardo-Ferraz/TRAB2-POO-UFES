@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "KNN - Small",
+            "name": "KNN - Img Small",
             "type": "python",
             "request": "launch",
             "program": "${workspaceFolder}/main.py",
@@ -17,7 +17,7 @@
             "justMyCode": true,
         },
         {
-            "name": "KNN - Medium",
+            "name": "KNN - Img Medium",
             "type": "python",
             "request": "launch",
             "program": "${workspaceFolder}/main.py",
@@ -29,7 +29,31 @@
             "justMyCode": true,
         },
         {
-            "name": "NC - Fast",
+            "name": "KNN - Text Small",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "args": [
+                "knn_text_small_config.json",
+                "report.txt"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": true,
+        },
+        {
+            "name": "KNN - Text Medium",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "args": [
+                "knn_text_medium_config.json",
+                "report.txt"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": true,
+        },
+        {
+            "name": "NC - Img Fast",
             "type": "python",
             "request": "launch",
             "program": "${workspaceFolder}/main.py",
@@ -41,12 +65,36 @@
             "justMyCode": true,
         },
         {
-            "name": "NC - Medium",
+            "name": "NC - Img Medium",
             "type": "python",
             "request": "launch",
             "program": "${workspaceFolder}/main.py",
             "args": [
                 "nc_img_medium_config.json",
+                "report.txt"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": true,
+        },
+        {
+            "name": "NC - Text Small",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "args": [
+                "nc_text_small_config.json",
+                "report.txt"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": true,
+        },
+        {
+            "name": "NC - Text Medium",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "args": [
+                "nc_text_medium_config.json",
                 "report.txt"
             ],
             "console": "integratedTerminal",
