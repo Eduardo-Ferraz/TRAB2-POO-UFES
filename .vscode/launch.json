@@ -29,6 +29,18 @@
             "justMyCode": true,
         },
         {
+            "name": "KNN - Text Tiny",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "args": [
+                "knn_text_tiny_config.json",
+                "report.txt"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": true,
+        },
+        {
             "name": "KNN - Text Small",
             "type": "python",
             "request": "launch",
@@ -46,7 +58,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/main.py",
             "args": [
-                "knn_text_medium_config.json",
+                "knn_text_medium_small_config.json",
                 "report.txt"
             ],
             "console": "integratedTerminal",
@@ -77,6 +89,18 @@
             "justMyCode": true,
         },
         {
+            "name": "NC - Text Tiny",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/main.py",
+            "args": [
+                "nc_text_tiny_config.json",
+                "report.txt"
+            ],
+            "console": "integratedTerminal",
+            "justMyCode": true,
+        },
+        {
             "name": "NC - Text Small",
             "type": "python",
             "request": "launch",
@@ -94,7 +118,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/main.py",
             "args": [
-                "nc_text_medium_config.json",
+                "nc_text_medium_small_config.json",
                 "report.txt"
             ],
             "console": "integratedTerminal",

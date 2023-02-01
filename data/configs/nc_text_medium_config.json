@@ -1,6 +1,0 @@
-{
-    "type": "news",
-    "train_path": "data/datasets/news-medium/train.txt",
-    "test_path": "data/datasets/news-medium/test.txt",
-    "classifier": "nc"
-}
