@@ -16,7 +16,8 @@ class NewsDataset(DatasetInterface):
         with open('data/datasets/stopwords.txt', 'r', encoding='utf-8') as stopwords_file:
             self._stop_words = stopwords_file.readlines()
             self._stop_words = [
-                self._clear_word(word) for word in self._stop_words
+                word.replace(NEW_LINE_CHAR, SPACE).replace(SPACE, NO_CHAR) 
+                for word in self._stop_words
             ]
 
         with open(self.path, 'r', encoding='utf-8') as f:
@@ -43,18 +44,16 @@ class NewsDataset(DatasetInterface):
         with open(notiPath) as f:
             notiContent = f.readlines()[0]
 
-        content_relevant_words = self._clear_content(notiContent)
+        palavras_relevantes_do_conteudo = self._limpar_conteudo(notiContent)
 
-        return content_relevant_words, notiClass
+        return self._vetorizar_palavras(palavras_relevantes_do_conteudo), notiClass
 
-    def _clear_content(self, full_content: str) -> list[str]:
+    def _limpar_conteudo(self, full_content: str) -> list[str]:
         """Removes the stopwords, spaces, '\n' and returns a list of the remaining words"""
         all_words = full_content.replace(NEW_LINE_CHAR, SPACE).split(SPACE)
         all_words = [word for word in all_words if word not in self._stop_words]
 
         return all_words
 
-    def _clear_word(self, word: str) -> str:
-        """Removes spaces and '\n' from words"""
-        clear_word = word.replace(NEW_LINE_CHAR, SPACE).replace(SPACE, NO_CHAR)
-        return clear_word
+    def _vetorizar_palavras(self, words: list[str]) -> list[int]:
+        return []
