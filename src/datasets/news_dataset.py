@@ -2,6 +2,9 @@
 from typing import Tuple, Any, Dict
 from .dataset_interface import DatasetInterface
 
+SPACE = ' '
+NO_CHAR = ''
+NEW_LINE_CHAR = '\n'
 
 class NewsDataset(DatasetInterface):
     # ler arquivo contendo os nomes dos arquivos de noticias e as classes
@@ -9,16 +12,23 @@ class NewsDataset(DatasetInterface):
         super().__init__(path)
         self.path = path
         self.noticias = []
-    
-        with open(self.path) as f:
+
+        with open('data/datasets/stopwords.txt', 'r', encoding='utf-8') as stopwords_file:
+            self._stop_words = stopwords_file.readlines()
+            self._stop_words = [
+                self._clear_word(word) for word in self._stop_words
+            ]
+
+        with open(self.path, 'r', encoding='utf-8') as f:
             for line in f:
                 line = line.split()
                 lastBar = self.path.rfind('/')
-                
+
                 notiPath = self.path[:lastBar+1] + line[0]
                 notiClass = line[1]
 
                 self.noticias.append([notiPath, notiClass])
+                self.get(len(self.noticias) - 1)
 
     # retornar o numero de noticias no dataset (numero de linhas no arquivo)
     def size(self) -> int:
@@ -31,6 +41,20 @@ class NewsDataset(DatasetInterface):
         notiClass = self.noticias[idx][1]
 
         with open(notiPath) as f:
-            notiContent = f.readlines()
+            notiContent = f.readlines()[0]
 
-        return notiContent, notiClass
+        content_relevant_words = self._clear_content(notiContent)
+
+        return content_relevant_words, notiClass
+
+    def _clear_content(self, full_content: str) -> list[str]:
+        """Removes the stopwords, spaces, '\n' and returns a list of the remaining words"""
+        all_words = full_content.replace(NEW_LINE_CHAR, SPACE).split(SPACE)
+        all_words = [word for word in all_words if word not in self._stop_words]
+
+        return all_words
+
+    def _clear_word(self, word: str) -> str:
+        """Removes spaces and '\n' from words"""
+        clear_word = word.replace(NEW_LINE_CHAR, SPACE).replace(SPACE, NO_CHAR)
+        return clear_word
