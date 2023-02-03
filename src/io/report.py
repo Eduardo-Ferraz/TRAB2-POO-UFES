@@ -18,7 +18,7 @@ def write_report(path: str, config: Dict, metrics_values) -> None:
         'accuracy': f'{metrics_values["accuracy"]:.2f}',
     }
 
-    f= open("report.txt","w+")
+    f= open(path,"w+")
 
     [f.write(f'{key}: {value}\n') for key, value in data.items()]
 
