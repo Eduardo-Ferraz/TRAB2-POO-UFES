@@ -45,7 +45,7 @@ class NewsDataset(DatasetInterface):
 
         content_relevant_words = self._clear_content(notiContent)
 
-        return content_relevant_words, notiClass
+        return self._dicionarizar(content_relevant_words), notiClass
 
     def _clear_content(self, full_content: str) -> list[str]:
         """Removes the stopwords, spaces, '\n' and returns a list of the remaining words"""
@@ -58,3 +58,14 @@ class NewsDataset(DatasetInterface):
         """Removes spaces and '\n' from words"""
         clear_word = word.replace(NEW_LINE_CHAR, SPACE).replace(SPACE, NO_CHAR)
         return clear_word
+    
+    def _dicionarizar(self, words: list[str]):
+        dict = {}
+        
+        for word in words:
+            if word in dict:
+                dict[word] += 1
+            else:
+                dict[word] = 1
+        
+        return dict

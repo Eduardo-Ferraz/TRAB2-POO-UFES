@@ -57,8 +57,10 @@ class NearestCentroidClassifier(ClassifierInterface):
             distancias = []
 
             for centroide in self.centroides:
-                distancias.append((get_distancia_euclidiana(
-                    vetor_teste, centroide[0]), centroide[1]))
+                distancias.append((
+                    get_distancia_euclidiana(centroide[0], vetor_teste), 
+                    centroide[1])
+                )
 
             distancias.sort(key=lambda x: x[0])
             mais_proximo = distancias[0]

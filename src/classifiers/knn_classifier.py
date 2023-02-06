@@ -28,15 +28,17 @@ class KnnClassifier(ClassifierInterface):
         return classes_preditas
 
     def _predict_amostra(self, test_dataset, idx_vetor):
-        vetor_de_teste, _ = test_dataset.get(
+        colecao_predict, _ = test_dataset.get(
             idx_vetor)  # vetor p/ calcular distancia
 
         distancias = []
 
         # Calcula a distancia do vetor de teste para os vetores de base
-        for vetor_de_base, result in self.vetores_de_base:
-            distancia = (get_distancia_euclidiana(
-                vetor_de_base, vetor_de_teste), result)
+        for colecao_base, result in self.vetores_de_base:
+            distancia = (
+                get_distancia_euclidiana(colecao_base, colecao_predict),
+                result
+            )
             distancias.append(distancia)
 
         distancias.sort(key=lambda dist: dist[0])
