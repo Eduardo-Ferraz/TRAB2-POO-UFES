@@ -55,5 +55,13 @@ class NewsDataset(DatasetInterface):
 
         return all_words
 
-    def _vetorizar_palavras(self, words: list[str]) -> list[int]:
-        return []
+    def _vetorizar_palavras(self, words: list[str]) -> dict:
+        dict = {}
+
+        for word in words:
+            if word in dict:
+                dict[word] += 1
+            else:
+                dict[word] = 1
+
+        return dict

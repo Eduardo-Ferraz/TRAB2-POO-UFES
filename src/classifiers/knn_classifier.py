@@ -18,6 +18,8 @@ class KnnClassifier(ClassifierInterface):
         self.vetores_de_base = []
         for i in range(train_dataset.size()):
             self.vetores_de_base.append(train_dataset.get(i))
+        
+        print(self.vetores_de_base)
 
     def predict(self, test_dataset: DatasetInterface) -> List[str]:
         """ para cada amostra no dataset, buscar os k vizinhos mais proximos e 
