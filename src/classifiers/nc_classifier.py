@@ -15,7 +15,6 @@ class NearestCentroidClassifier(ClassifierInterface):
         classes = []
         vetoresAPCO = []  # vetoresAgrupadosPorClasseOrdenada
         self.centroides = []
-        somaPnesimaCoord = 0
         datasetSize = train_dataset.size()
 
         """ Pega todaclasses sem repetição e ordena em classes"""
@@ -37,15 +36,46 @@ class NearestCentroidClassifier(ClassifierInterface):
                     vetoresAPCO[j].append(vetor)
                     break
 
-        """Para cada Classe c, para cada Coordenada x, para cada vetor v...."""
-        for c in range((len(classes))):
-            self.centroides.append(([], classes[c]))
-            for x in range(len(vetoresAPCO[0][0])):
-                for v in range(len(vetoresAPCO[0])):
-                    somaPnesimaCoord += vetoresAPCO[c][v][x]
-                mediaPnesimaCoord = somaPnesimaCoord / len(vetoresAPCO[0][0])
-                self.centroides[c][0].append(mediaPnesimaCoord)
-                somaPnesimaCoord = 0
+        if type(vetoresAPCO[0][0]) == type([]):
+            self._calculo_centroide_vetor(classes, vetoresAPCO)
+        else:
+            self._calculo_centroide_dicionario(classes, vetoresAPCO)
+
+    def _calculo_centroide_dicionario(self, classes, vetoresAPCO):
+        for idx_classe in range((len(classes))):
+            centroide = {}
+                
+            for idx_dicionario in range(len(vetoresAPCO[idx_classe])):
+                for dicionario in vetoresAPCO[idx_classe][idx_dicionario]:
+                    for palavra in dicionario:
+                        if palavra in list(centroide.keys()):
+                            centroide[palavra] += 1
+                        else:
+                            centroide[palavra] = 1
+
+            for key in centroide:
+                total_dicionarios = len(vetoresAPCO[idx_classe])
+
+                    # substituindo soma por media
+                centroide[key] = centroide[key] / total_dicionarios
+
+            self.centroides.append((centroide, classes[idx_classe]))
+
+    def _calculo_centroide_vetor(self, classes, vetoresAPCO):
+        for idx_classe in range((len(classes))):
+            self.centroides.append(([], classes[idx_classe]))
+                
+            for vetor in range(len(vetoresAPCO[0][0])):
+                soma_coordenada = 0
+
+                for idx_dicionario in range(len(vetoresAPCO[0])):
+                    colecao = vetoresAPCO[idx_classe][idx_dicionario]
+                    soma_coordenada += colecao[vetor]
+
+                mediaPnesimaCoord = soma_coordenada / len(vetoresAPCO[0][0])
+
+                self.centroides[idx_classe][0].append(mediaPnesimaCoord)
+
 
     def predict(self, test_dataset: DatasetInterface) -> List[str]:
         """ para cada amostra no dataset, buscar o centroide mais proximo e respectiva retornar a classe """
