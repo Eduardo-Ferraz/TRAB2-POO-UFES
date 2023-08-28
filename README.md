@@ -30,14 +30,11 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/Eduardo-Ferraz/TRAB2-POO-UFES">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
 
-<h3 align="center">project_title</h3>
+<h3 align="center">KNN and NC Tester</h3>
 
   <p align="center">
-    project_description
+    The goal of this project is to evaluate the performance of two machine learning algorithms, K-Nearest Neighbors and Nearest Centroid.
   </p>
 </div>
 
@@ -73,7 +70,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: ``, ``, `twitter_handle`, `eduardo-ferraz1`, `gmail`, `eduardoc.ferraz2`, `project_title`, `project_description`
+In this program, different sizes of datasets of images and texts provide a good uderstanding of the performance of the algorithms under different conditions, and the indicators avaliated are accuracy, training time per sample and inference time per sample.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -102,10 +99,10 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
+If you dont have the OpenCV package installed, run
+* pip
   ```sh
-  npm install npm@latest -g
+  pip install opencv-python
   ```
 
 ### Installation
