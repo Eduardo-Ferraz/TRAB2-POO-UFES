@@ -10,7 +10,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/main.py",
             "args": [
-                "knn_img_small_config.json",
+                "${workspaceFolder}/data/configs/knn_img_small_config.json",
                 "report.txt"
             ],
             "console": "integratedTerminal",
@@ -22,7 +22,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/main.py",
             "args": [
-                "knn_img_medium_config.json",
+                "${workspaceFolder}/data/configs/knn_img_medium_config.json",
                 "report.txt"
             ],
             "console": "integratedTerminal",
@@ -34,7 +34,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/main.py",
             "args": [
-                "knn_text_tiny_config.json",
+                "${workspaceFolder}/data/configs/knn_text_tiny_config.json",
                 "report.txt"
             ],
             "console": "integratedTerminal",
@@ -46,7 +46,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/main.py",
             "args": [
-                "knn_text_small_config.json",
+                "${workspaceFolder}/data/configs/knn_text_small_config.json",
                 "report.txt"
             ],
             "console": "integratedTerminal",
@@ -58,7 +58,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/main.py",
             "args": [
-                "knn_text_medium_small_config.json",
+                "${workspaceFolder}/data/configs/knn_text_medium_small_config.json",
                 "report.txt"
             ],
             "console": "integratedTerminal",
@@ -70,7 +70,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/main.py",
             "args": [
-                "nc_img_small_config.json",
+                "${workspaceFolder}/data/configs/nc_img_small_config.json",
                 "report.txt"
             ],
             "console": "integratedTerminal",
@@ -82,7 +82,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/main.py",
             "args": [
-                "nc_img_medium_config.json",
+                "${workspaceFolder}/data/configs/nc_img_medium_config.json",
                 "report.txt"
             ],
             "console": "integratedTerminal",
@@ -94,7 +94,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/main.py",
             "args": [
-                "nc_text_tiny_config.json",
+                "${workspaceFolder}/data/configs/nc_text_tiny_config.json",
                 "report.txt"
             ],
             "console": "integratedTerminal",
@@ -106,7 +106,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/main.py",
             "args": [
-                "nc_text_small_config.json",
+                "${workspaceFolder}/data/configs/nc_text_small_config.json",
                 "report.txt"
             ],
             "console": "integratedTerminal",
@@ -118,7 +118,7 @@
             "request": "launch",
             "program": "${workspaceFolder}/main.py",
             "args": [
-                "nc_text_medium_small_config.json",
+                "${workspaceFolder}/data/configs/nc_text_medium_small_config.json",
                 "report.txt"
             ],
             "console": "integratedTerminal",
