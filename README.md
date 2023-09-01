@@ -135,9 +135,8 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 ## Contact
 
 Eduardo Ferraz: https://www.linkedin.com/in/eduardo-ferraz1/
-Igor Baiocco: https://www.linkedin.com/in/igor-baiocco/
 
-Project Link: [https://github.com/Eduardo-Ferraz/TRAB2-POO-UFES](https://github.com/Eduardo-Ferraz/TRAB2-POO-UFES)
+Igor Baiocco: https://www.linkedin.com/in/igor-baiocco/
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
