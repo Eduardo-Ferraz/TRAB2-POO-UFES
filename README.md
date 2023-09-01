@@ -85,7 +85,7 @@ To get a local copy up and running, follow these simple example steps.
 
 If you don't have the OpenCV package installed, run
 * pip
-  ```sh
+  ```
   pip install opencv-python
   ```
 
@@ -94,7 +94,7 @@ If you don't have the OpenCV package installed, run
 ## Usage
 
 To use this program, you should simply clone the repository with
-  ```sh
+  ```
   git clone https://github.com/Eduardo-Ferraz/TRAB2-POO-UFES
   ```
 Then open the folder TRAB2-POO-UFES with VS Code and open the Run and Debug section.
