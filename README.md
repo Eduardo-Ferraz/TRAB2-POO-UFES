@@ -10,6 +10,7 @@
 
 
 
+
 <!-- PROJECT SHIELDS -->
 <!--
 *** I'm using markdown "reference style" links for readability.
@@ -27,46 +28,49 @@
 
 
 
+
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
 
 <h3 align="center">KNN and NC Tester</h3>
 
-  <p align="center">
-    The goal of this project is to evaluate the performance of two machine learning algorithms, K-Nearest Neighbors and Nearest Centroid.
-  </p>
+  <p align="center">
+    The goal of this project is to evaluate the performance of two machine learning algorithms, K-Nearest Neighbors and Nearest Centroid.
+  </p>
 </div>
+
 
 
 
 <!-- TABLE OF CONTENTS -->
 <details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
 </details>
+
 
 
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-In this program, different sizes of datasets of images and texts provide a good uderstanding of the performance of the algorithms under different conditions, and the indicators avaliated are accuracy, training time per sample and inference time per sample.
+In this program, different sizes of datasets of images and texts provide a good understanding of the performance of the algorithms under different conditions, and the indicators analyzed are accuracy, training time per sample, and inference time per sample.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -75,26 +79,28 @@ In this program, different sizes of datasets of images and texts provide a good 
 ## Getting Started
 
 This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+To get a local copy up and running, follow these simple example steps.
 
 ### Prerequisites
 
-If you dont have the OpenCV package installed, run
+If you don't have the OpenCV package installed, run
 * pip
-  ```sh
-  pip install opencv-python
-  ```
+  ```sh
+  pip install opencv-python
+  ```
 
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
 To use this program, you should simply clone the repository with
-  ```sh
-  git clone https://github.com/Eduardo-Ferraz/TRAB2-POO-UFES
-  ```
+  ```sh
+  git clone https://github.com/Eduardo-Ferraz/TRAB2-POO-UFES
+  ```
 Then open the folder TRAB2-POO-UFES with VS Code and open the Run and Debug section.
-There, you should find 
+There, you should find 10 options for analyses to run, 5 for each algorithm and with different types and sizes of datasets.
+By running the desired test, the program will create a report.txt file in the TRAB2-POO-UFES folder. There, you can see the results of the different parameters analyzed in the evaluation.
+Every time you run the test, a new report.txt file is created, overwriting the old one if it still has the same name.
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -114,6 +120,7 @@ Don't forget to give the project a star! Thanks again!
 
 
 
+
 <!-- LICENSE -->
 ## License
 
@@ -123,15 +130,17 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 
 
+
 <!-- CONTACT -->
 ## Contact
 
-Eduardo Ferraz - https://www.linkedin.com/in/eduardo-ferraz1/
-Igor Baiocco - https://www.linkedin.com/in/igor-baiocco/
+Eduardo Ferraz: https://www.linkedin.com/in/eduardo-ferraz1/
+Igor Baiocco: https://www.linkedin.com/in/igor-baiocco/
 
 Project Link: [https://github.com/Eduardo-Ferraz/TRAB2-POO-UFES](https://github.com/Eduardo-Ferraz/TRAB2-POO-UFES)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 
 
@@ -141,6 +150,7 @@ Project Link: [https://github.com/Eduardo-Ferraz/TRAB2-POO-UFES](https://github.
 Special thanks to our professor Filipe Mutz (https://github.com/filipemtz) for the guidance during this journey, always exploring new frontiers of the capabilities of their mentored
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 
 
